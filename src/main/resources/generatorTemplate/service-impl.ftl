@@ -31,16 +31,16 @@ public class ${modelNameUpperCamel}ServiceImpl implements ${modelNameUpperCamel}
     @Transactional
     @Override
     public Result create(${modelNameUpperCamel} ${modelNameLowerCamel}) {
-        sysCompany = this.set${modelNameUpperCamel}(${modelNameLowerCamel});
-        sysCompanyDao.create(${modelNameLowerCamel});
+        ${modelNameLowerCamel} = this.set${modelNameUpperCamel}(${modelNameLowerCamel});
+        ${modelNameLowerCamel}Dao.create(${modelNameLowerCamel});
         return new Result().success("添加成功！");
     }
 
     @Transactional
     @Override
     public Result update(${modelNameUpperCamel} ${modelNameLowerCamel}) {
-        sysCompany.setModifyTime(new Date());
-        sysCompanyDao.update(${modelNameLowerCamel});
+        ${modelNameLowerCamel}.setModifyTime(new Date());
+        ${modelNameLowerCamel}Dao.update(${modelNameLowerCamel});
         return new Result().success("修改成功！");
     }
 
