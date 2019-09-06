@@ -48,7 +48,7 @@ public class ${modelNameUpperCamel}ServiceImpl implements ${modelNameUpperCamel}
         ${modelNameLowerCamel}.setCreateTime(new Date());
         ${modelNameLowerCamel}.setModifyTime(new Date());
         ${modelNameLowerCamel}Dao.create(${modelNameLowerCamel});
-        return new Result().success("添加成功！");
+        return Result.success("添加成功！");
     }
 
     @Transactional
@@ -56,7 +56,7 @@ public class ${modelNameUpperCamel}ServiceImpl implements ${modelNameUpperCamel}
     public Result<?>  update(${modelNameUpperCamel} ${modelNameLowerCamel}) {
         ${modelNameLowerCamel}.setModifyTime(new Date());
         ${modelNameLowerCamel}Dao.update(${modelNameLowerCamel});
-        return new Result().success("修改成功！");
+        return Result.success("修改成功！");
     }
 
 
@@ -64,20 +64,20 @@ public class ${modelNameUpperCamel}ServiceImpl implements ${modelNameUpperCamel}
     @Override
     public Result<?>  delete(Integer id) {
         ${modelNameLowerCamel}Dao.delete(id);
-        return new Result().success("删除成功！");
+        return Result.success("删除成功！");
     }
 
     @Override
     public Result<ResultData<#noparse><List</#noparse><${modelNameUpperCamel}>>> findById(Integer id) {
-        return new Result().success(${modelNameLowerCamel}Dao.findById(id));
+        return pageTool.findById(${modelNameLowerCamel}Dao.findById(id));
     }
 
     @Override
     public Result<ResultPageData<#noparse><List</#noparse><${modelNameUpperCamel}>>> queryPage(${dtoNameUpperCamel} ${dtoNameLowerCamel}, int pageNum, int pageSize) {
         PageHelper.startPage(pageNum, pageSize);
         Page<${modelNameUpperCamel}> page = ${modelNameLowerCamel}Dao.queryPage(${dtoNameLowerCamel});
-            PageInfo<${modelNameUpperCamel}> pageInfo = new PageInfo<>(page);
-            return new Result().success(pageInfo.getList(),(int)pageInfo.getTotal(),pageSize,pageNum,pageInfo.getPages());
-        }
+        PageInfo<${modelNameUpperCamel}> pageInfo = new PageInfo<>(page);
+        return pageTool.getPageInfo(pageInfo, pageSize, pageNum);
+    }
 
 }
