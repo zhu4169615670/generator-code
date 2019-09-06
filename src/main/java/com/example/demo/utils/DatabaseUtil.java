@@ -6,7 +6,6 @@ import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javax.swing.plaf.TableHeaderUI;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -21,10 +20,10 @@ public class DatabaseUtil {
 
     private final static Logger LOGGER = LoggerFactory.getLogger(DatabaseUtil.class);
 
-    private static final String DRIVER = CodeGenerator.JDBC_DIVER_CLASS_NAME;
-    private static final String URL = CodeGenerator.JDBC_URL;
-    private static final String USERNAME = CodeGenerator.JDBC_USERNAME;
-    private static final String PASSWORD = CodeGenerator.JDBC_PASSWORD;
+    private static final String DRIVER = CodeGenerator.JDBC_DIVER_CLASS_NAME.trim();
+    private static final String URL = CodeGenerator.JDBC_URL.trim();
+    private static final String USERNAME = CodeGenerator.JDBC_USERNAME.trim();
+    private static final String PASSWORD = CodeGenerator.JDBC_PASSWORD.trim();
     private static final String SQL = "SELECT * FROM ";
 
     static {

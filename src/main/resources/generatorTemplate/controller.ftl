@@ -22,6 +22,9 @@ import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import com.baison.e3plus.common.message.Result;
+import com.baison.e3plus.common.message.ResultData;
+import com.baison.e3plus.common.message.ResultPageData;
+import java.util.List;
 
 
 
@@ -44,28 +47,28 @@ public class ${modelNameUpperCamel}Controller {
     @ApiOperation(value = "保存接口入参", notes = "保存接口入参", httpMethod = "POST")
     @ResponseBody
     @PostMapping(value = "/create", produces = { MediaType.APPLICATION_JSON_UTF8_VALUE })
-    public Result create(@RequestBody ${modelNameUpperCamel} ${modelNameLowerCamel}) {
+    public Result<?> create(@RequestBody ${modelNameUpperCamel} ${modelNameLowerCamel}) {
      return ${modelNameLowerCamel}Service.create(${modelNameLowerCamel});
     }
 
     @ApiImplicitParam(value = "修改接口", dataTypeClass = ${modelNameUpperCamel}.class)
     @ApiOperation(value = "修改接口入参", notes = "修改接口入参", httpMethod = "PUT")
     @PutMapping(value = "/update")
-    public Result update(@RequestBody ${modelNameUpperCamel} ${modelNameLowerCamel}) {
+    public Result<?> update(@RequestBody ${modelNameUpperCamel} ${modelNameLowerCamel}) {
         return ${modelNameLowerCamel}Service.update(${modelNameLowerCamel});
     }
 
     @ApiImplicitParam(name = "id", value = "主键ID", dataType = "String")
     @ApiOperation(value = "删除接口入参", notes = "删除接口入参", httpMethod = "DELETE")
     @DeleteMapping(value = "/delete/{id}")
-    public Result delete(@PathVariable("id") Integer id) {
+    public Result<?> delete(@PathVariable("id") Integer id) {
         return ${modelNameLowerCamel}Service.delete(id);
     }
 
     @ApiImplicitParam(name = "id", value = "主键ID", dataType = "int")
     @ApiOperation(value = "根据主键ID查询接口入参", notes = "根据主键ID查询接口入参", httpMethod = "GET")
     @GetMapping(value = "/findById")
-    public Result findById(@RequestParam("id") Integer id) {
+    public Result<ResultData<#noparse><List</#noparse><${modelNameUpperCamel}>>> findById(@RequestParam("id") Integer id) {
         return ${modelNameLowerCamel}Service.findById(id);
     }
 
@@ -74,7 +77,7 @@ public class ${modelNameUpperCamel}Controller {
     @ApiImplicitParam(value = "分页查询接口", dataTypeClass = ${modelNameUpperCamel}.class) })
     @ApiOperation(value = "分页查询接口入参", notes = "分页查询接口入参", httpMethod = "POST")
     @PostMapping(value = "/queryPage", produces = { MediaType.APPLICATION_JSON_UTF8_VALUE })
-    public Result queryPage(@RequestBody ${dtoNameUpperCamel} ${dtoNameLowerCamel}, @RequestParam("pageNum") int pageNum,
+    public Result<ResultPageData<#noparse><List</#noparse><${modelNameUpperCamel}>>> queryPage(@RequestBody ${dtoNameUpperCamel} ${dtoNameLowerCamel}, @RequestParam("pageNum") int pageNum,
     @RequestParam("pageSize") int pageSize) {
          return ${modelNameLowerCamel}Service.queryPage(${dtoNameLowerCamel}, pageNum, pageSize);
     }

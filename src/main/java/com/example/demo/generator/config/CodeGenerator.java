@@ -138,10 +138,10 @@ public class CodeGenerator {
 
     public static void main(String[] args) throws Exception {
         CodeGeneratorParamModel codeGeneratorParamModel = new CodeGeneratorParamModel();
-        codeGeneratorParamModel.setJdbcUrl("jdbc:mysql://baisondb001.mysql.database.chinacloudapi.cn:3306/guns?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai");
-        codeGeneratorParamModel.setAuthor("walk_zpf");
+        codeGeneratorParamModel.setJdbcUrl("jdbc:mysql://baisondb001.mysql.database.chinacloudapi.cn:3306/e3plus-system-dev?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai");
+        codeGeneratorParamModel.setAuthor("pengfei.zhu");
         codeGeneratorParamModel.setJdbcPwd("fHzap123!@#");
-        codeGeneratorParamModel.setJdbcUserName("root");
+        codeGeneratorParamModel.setJdbcUserName("baison@baisondb001");
         codeGeneratorParamModel.setBasePackagePath("com.example.demo");
         codeGeneratorParamModel.setDtoAbsolutePath("/com/example/demo/dto/");
         codeGeneratorParamModel.setModelAbsolutePath("/com/example/demo/model/");

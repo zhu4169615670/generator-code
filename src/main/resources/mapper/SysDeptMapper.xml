@@ -3,22 +3,20 @@
 <mapper namespace="com.example.demo.dao.SysDeptDao">
     <resultMap id="BaseResultMap" type="com.example.demo.model.SysDept">
         <id column="id" jdbcType="INTEGER" property="id" />
-                 <id column="deptId" jdbcType="BIGINT" property="deptId" />
-            <result column="deptId" jdbcType="BIGINT" property="deptId" />
-            <result column="pid" jdbcType="BIGINT" property="pid" />
-            <result column="pids" jdbcType="VARCHAR" property="pids" />
-            <result column="simpleName" jdbcType="VARCHAR" property="simpleName" />
-            <result column="fullName" jdbcType="VARCHAR" property="fullName" />
-            <result column="description" jdbcType="VARCHAR" property="description" />
-            <result column="version" jdbcType="INTEGER" property="version" />
-            <result column="sort" jdbcType="INTEGER" property="sort" />
+            <result column="id" jdbcType="INTEGER" property="id" />
+            <result column="code" jdbcType="VARCHAR" property="code" />
+            <result column="name" jdbcType="VARCHAR" property="name" />
+            <result column="pid" jdbcType="INTEGER" property="pid" />
+            <result column="satus" jdbcType="INTEGER" property="satus" />
+            <result column="grade" jdbcType="INTEGER" property="grade" />
+            <result column="createBy" jdbcType="INTEGER" property="createBy" />
             <result column="createTime" jdbcType="DATETIME" property="createTime" />
-            <result column="updateTime" jdbcType="DATETIME" property="updateTime" />
-            <result column="createUser" jdbcType="BIGINT" property="createUser" />
-            <result column="updateUser" jdbcType="BIGINT" property="updateUser" />
+            <result column="modifyBy" jdbcType="INTEGER" property="modifyBy" />
+            <result column="modifyTime" jdbcType="DATETIME" property="modifyTime" />
+            <result column="lastchanged" jdbcType="TIMESTAMP" property="lastchanged" />
     </resultMap>
     <sql id="Base_Column_List">
-        dept_id,pid,pids,simple_name,full_name,description,version,sort,create_time,update_time,create_user,update_user
+        id,code,name,pid,satus,grade,create_by,create_time,modify_by,modify_time,lastchangedid,code,name,pid,satus,grade,create_by,create_time,modify_by,modify_time,lastchanged
     </sql>
     <select id="findById" parameterType="java.lang.Integer" resultMap="BaseResultMap">
         select
@@ -33,120 +31,111 @@
     <insert id="create" parameterType="com.example.demo.model.SysDept">
         insert into sys_dept
         <trim prefix="(" suffix=")" suffixOverrides=",">
-            <if test="deptId != null">
-                dept_id
+            <if test="id != null">
+                id
+            </if>
+            <if test="code != null">
+                code
+            </if>
+            <if test="name != null">
+                name
             </if>
             <if test="pid != null">
                 pid
             </if>
-            <if test="pids != null">
-                pids
+            <if test="satus != null">
+                satus
             </if>
-            <if test="simpleName != null">
-                simple_name
+            <if test="grade != null">
+                grade
             </if>
-            <if test="fullName != null">
-                full_name
-            </if>
-            <if test="description != null">
-                description
-            </if>
-            <if test="version != null">
-                version
-            </if>
-            <if test="sort != null">
-                sort
+            <if test="createBy != null">
+                create_by
             </if>
             <if test="createTime != null">
                 create_time
             </if>
-            <if test="updateTime != null">
-                update_time
+            <if test="modifyBy != null">
+                modify_by
             </if>
-            <if test="createUser != null">
-                create_user
+            <if test="modifyTime != null">
+                modify_time
             </if>
-            <if test="updateUser != null">
-                update_user
+            <if test="lastchanged != null">
+                lastchanged
             </if>
         </trim>
         <trim prefix="values (" suffix=")" suffixOverrides=",">
-            <if test="deptId != null">
-                #{deptId,jdbcType=BIGINT}
+            <if test="id != null">
+                #{id,jdbcType=INTEGER}
+            </if>
+            <if test="code != null">
+                #{code,jdbcType=VARCHAR}
+            </if>
+            <if test="name != null">
+                #{name,jdbcType=VARCHAR}
             </if>
             <if test="pid != null">
-                #{pid,jdbcType=BIGINT}
+                #{pid,jdbcType=INTEGER}
             </if>
-            <if test="pids != null">
-                #{pids,jdbcType=VARCHAR}
+            <if test="satus != null">
+                #{satus,jdbcType=INTEGER}
             </if>
-            <if test="simpleName != null">
-                #{simpleName,jdbcType=VARCHAR}
+            <if test="grade != null">
+                #{grade,jdbcType=INTEGER}
             </if>
-            <if test="fullName != null">
-                #{fullName,jdbcType=VARCHAR}
-            </if>
-            <if test="description != null">
-                #{description,jdbcType=VARCHAR}
-            </if>
-            <if test="version != null">
-                #{version,jdbcType=INTEGER}
-            </if>
-            <if test="sort != null">
-                #{sort,jdbcType=INTEGER}
+            <if test="createBy != null">
+                #{createBy,jdbcType=INTEGER}
             </if>
             <if test="createTime != null">
                 #{createTime,jdbcType=DATETIME}
             </if>
-            <if test="updateTime != null">
-                #{updateTime,jdbcType=DATETIME}
+            <if test="modifyBy != null">
+                #{modifyBy,jdbcType=INTEGER}
             </if>
-            <if test="createUser != null">
-                #{createUser,jdbcType=BIGINT}
+            <if test="modifyTime != null">
+                #{modifyTime,jdbcType=DATETIME}
             </if>
-            <if test="updateUser != null">
-                #{updateUser,jdbcType=BIGINT}
+            <if test="lastchanged != null">
+                #{lastchanged,jdbcType=TIMESTAMP}
             </if>
         </trim>
     </insert>
     <update id="update" parameterType="com.example.demo.model.SysDept">
         update sys_dept
         <set>
-            <if test="deptId != null">
-                #{deptId,jdbcType=BIGINT},
+            <if test="id != null">
+                #{id,jdbcType=INTEGER},
+            </if>
+            <if test="code != null">
+                #{code,jdbcType=VARCHAR},
+            </if>
+            <if test="name != null">
+                #{name,jdbcType=VARCHAR},
             </if>
             <if test="pid != null">
-                #{pid,jdbcType=BIGINT},
+                #{pid,jdbcType=INTEGER},
             </if>
-            <if test="pids != null">
-                #{pids,jdbcType=VARCHAR},
+            <if test="satus != null">
+                #{satus,jdbcType=INTEGER},
             </if>
-            <if test="simpleName != null">
-                #{simpleName,jdbcType=VARCHAR},
+            <if test="grade != null">
+                #{grade,jdbcType=INTEGER},
             </if>
-            <if test="fullName != null">
-                #{fullName,jdbcType=VARCHAR},
-            </if>
-            <if test="description != null">
-                #{description,jdbcType=VARCHAR},
-            </if>
-            <if test="version != null">
-                #{version,jdbcType=INTEGER},
-            </if>
-            <if test="sort != null">
-                #{sort,jdbcType=INTEGER},
+            <if test="createBy != null">
+                #{createBy,jdbcType=INTEGER},
             </if>
             <if test="createTime != null">
                 #{createTime,jdbcType=DATETIME},
             </if>
-            <if test="updateTime != null">
-                #{updateTime,jdbcType=DATETIME},
+            <if test="modifyBy != null">
+                #{modifyBy,jdbcType=INTEGER},
             </if>
-            <if test="createUser != null">
-                #{createUser,jdbcType=BIGINT},
+            <if test="modifyTime != null">
+                #{modifyTime,jdbcType=DATETIME},
             </if>
-            <if test="updateUser != null">
-                #{updateUser,jdbcType=BIGINT},
+            <if test="lastchanged != null">
+                #{lastchanged,jdbcType=TIMESTAMP},
             </if>
         </set>
         where id = #{id,jdbcType=INTEGER}
@@ -159,41 +148,38 @@
         from
         sys_dept
         <where>
-                <if test="deptId != null">
-                    and dept_id=  #{deptId,jdbcType=BIGINT}
+                <if test="id != null">
+                    and id=  #{id,jdbcType=INTEGER}
+                </if>
+                <if test="code != null">
+                    and code=  #{code,jdbcType=VARCHAR}
+                </if>
+                <if test="name != null">
+                    and name=  #{name,jdbcType=VARCHAR}
                 </if>
                 <if test="pid != null">
-                    and pid=  #{pid,jdbcType=BIGINT}
+                    and pid=  #{pid,jdbcType=INTEGER}
                 </if>
-                <if test="pids != null">
-                    and pids=  #{pids,jdbcType=VARCHAR}
+                <if test="satus != null">
+                    and satus=  #{satus,jdbcType=INTEGER}
                 </if>
-                <if test="simpleName != null">
-                    and simple_name=  #{simpleName,jdbcType=VARCHAR}
+                <if test="grade != null">
+                    and grade=  #{grade,jdbcType=INTEGER}
                 </if>
-                <if test="fullName != null">
-                    and full_name=  #{fullName,jdbcType=VARCHAR}
-                </if>
-                <if test="description != null">
-                    and description=  #{description,jdbcType=VARCHAR}
-                </if>
-                <if test="version != null">
-                    and version=  #{version,jdbcType=INTEGER}
-                </if>
-                <if test="sort != null">
-                    and sort=  #{sort,jdbcType=INTEGER}
+                <if test="createBy != null">
+                    and create_by=  #{createBy,jdbcType=INTEGER}
                 </if>
                 <if test="createTime != null">
                     and create_time=  #{createTime,jdbcType=DATETIME}
                 </if>
-                <if test="updateTime != null">
-                    and update_time=  #{updateTime,jdbcType=DATETIME}
+                <if test="modifyBy != null">
+                    and modify_by=  #{modifyBy,jdbcType=INTEGER}
                 </if>
-                <if test="createUser != null">
-                    and create_user=  #{createUser,jdbcType=BIGINT}
+                <if test="modifyTime != null">
+                    and modify_time=  #{modifyTime,jdbcType=DATETIME}
                 </if>
-                <if test="updateUser != null">
-                    and update_user=  #{updateUser,jdbcType=BIGINT}
+                <if test="lastchanged != null">
+                    and lastchanged=  #{lastchanged,jdbcType=TIMESTAMP}
                 </if>
         </where>
     </select>

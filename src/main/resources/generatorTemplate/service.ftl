@@ -1,8 +1,10 @@
 package ${basePackage}.service;
 import ${basePackage}.model.${modelNameUpperCamel};
-
+import java.util.List;
 import ${basePackage}.dto.${dtoNameUpperCamel};
 import com.baison.e3plus.common.message.Result;
+import com.baison.e3plus.common.message.ResultData;
+import com.baison.e3plus.common.message.ResultPageData;
 
 /**
 * @ Author     ：${author}
@@ -12,13 +14,13 @@ import com.baison.e3plus.common.message.Result;
 */
 public interface ${modelNameUpperCamel}Service{
 
-    Result create(${modelNameUpperCamel} ${modelNameLowerCamel});
+    Result<?> create(${modelNameUpperCamel} ${modelNameLowerCamel});
 
-    Result update(${modelNameUpperCamel} ${modelNameLowerCamel});
+    Result<?> update(${modelNameUpperCamel} ${modelNameLowerCamel});
 
-    Result delete(Integer id);
+    Result<?> delete(Integer id);
 
-    Result findById(Integer id);
+    Result<ResultData<#noparse><List</#noparse><${modelNameUpperCamel}>>> findById(Integer id);
 
-    Result queryPage(${dtoNameUpperCamel} ${dtoNameLowerCamel}, int pageNum, int pageSize);
+    Result<ResultPageData<#noparse><List</#noparse><${modelNameUpperCamel}>>> queryPage(${dtoNameUpperCamel} ${dtoNameLowerCamel}, int pageNum, int pageSize);
 }
