@@ -27,7 +27,7 @@
         insert into ${tablename}
         <trim prefix="(" suffix=")" suffixOverrides=",">
         <#list baseDataList as data>
-            <#if data.jdbcType?index_of("INTEGER")!=-1 || data.jdbcType?index_of("BIGINT")!=-1>
+            <#if data.jdbcType?index_of("INTEGER")!=-1 || data.jdbcType?index_of("BIGINT")!=-1 || data.jdbcType?index_of("TIMESTAMP")!=-1>
             <if test="${data.columnName} != null">
                 ${data.jdbcColumnName}
             </if>
@@ -56,7 +56,7 @@
         update ${tablename}
         <set>
             <#list baseDataList as data>
-        <#if data.jdbcType?index_of("INTEGER")!=-1 || data.jdbcType?index_of("BIGINT")!=-1>
+        <#if data.jdbcType?index_of("INTEGER")!=-1 || data.jdbcType?index_of("BIGINT")!=-1  || data.jdbcType?index_of("TIMESTAMP")!=-1>
             <if test="${data.columnName} != null">
                 <#noparse>#{</#noparse>${data.columnName},jdbcType=${data.jdbcType}<#noparse>}</#noparse>,
             </if>
@@ -78,7 +78,7 @@
         ${tablename}
         <where>
         <#list baseDataList as data>
-        <#if data.jdbcType?index_of("INTEGER")!=-1 || data.jdbcType?index_of("BIGINT")!=-1>
+        <#if data.jdbcType?index_of("INTEGER")!=-1 || data.jdbcType?index_of("BIGINT")!=-1  || data.jdbcType?index_of("TIMESTAMP")!=-1>
             <if test="${data.columnName} != null">
                 and ${data.jdbcColumnName}= <#noparse>#{</#noparse>${data.columnName},jdbcType=${data.jdbcType}<#noparse>}</#noparse>
             </if>
