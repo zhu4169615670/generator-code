@@ -170,21 +170,18 @@ public class DatabaseUtil {
         }
         return columnComments;
     }
-    public static void main(String[] args) {
-        String tableName = "sys_dept";
-        List<BaseData> table = getBaseDataList("sys_dept");
-        System.out.println(tableName);
-    }
 
     //存所有的数据库列名
     public static String ALL_COLUNMS = "";
 
     public static List<BaseData> getBaseDataList(String tableName){
         List<String> columnNames = getColumnNames(tableName);
-        for (String columnName : columnNames) {
-            ALL_COLUNMS += columnName+",";
+        if(StringUtils.isEmpty(ALL_COLUNMS)){
+            for (String columnName : columnNames) {
+                ALL_COLUNMS += columnName+",";
+            }
+            ALL_COLUNMS = ALL_COLUNMS.substring(0,ALL_COLUNMS.length() - 1);
         }
-        ALL_COLUNMS = ALL_COLUNMS.substring(0,ALL_COLUNMS.length() - 1);
         List<String> columnTypes = getColumnTypes(tableName);
         List<String> columnComments = getColumnComments(tableName);
         String primariyKey = getPrimariyKey(tableName);
