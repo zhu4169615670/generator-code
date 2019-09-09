@@ -5,9 +5,9 @@
         <id column="id" jdbcType="INTEGER" property="id"/>
         <#list baseDataList as data>
             <#if (data.isPrimaryKey==1)>
-                <id column="${data.columnName}" jdbcType="${data.jdbcType}" property="${data.columnName}"/>
+                <id column="${data.jdbcColumnName}" jdbcType="${data.jdbcType}" property="${data.columnName}"/>
             </#if>
-            <result column="${data.columnName}" jdbcType="${data.jdbcType}" property="${data.columnName}"/>
+            <result column="${data.jdbcColumnName}" jdbcType="${data.jdbcType}" property="${data.columnName}"/>
         </#list>
     </resultMap>
     <sql id="Base_Column_List">
