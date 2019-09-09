@@ -206,7 +206,7 @@ public class DatabaseUtil {
                     columnType = "String";
                     break;
                 case "DATETIME":
-                    baseData.setJdbcType("DATETIME");
+                    baseData.setJdbcType("TIMESTAMP");
                     columnType = "Date";
                     break;
                 case "TIMESTAMP":
