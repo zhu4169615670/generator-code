@@ -149,7 +149,7 @@ public class CodeGenerator {
         codeGeneratorParamModel.setServiceAbsolutePath("/com/example/demo/service/");
         codeGeneratorParamModel.setServiceImplAbsolutePath("/com/example/demo/service/impl/");
         codeGeneratorParamModel.setDaoAbsolutePath("/com/example/demo/dao/");
-        codeGeneratorParamModel.setTableNames(new String[]{"sys_dept"});
+        codeGeneratorParamModel.setTableNames(new String[]{"sys_position"});
         CodeGenerator codeGenerator = new CodeGenerator();
         codeGenerator.genCode(codeGeneratorParamModel);
     }

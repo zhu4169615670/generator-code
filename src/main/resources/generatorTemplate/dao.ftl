@@ -6,6 +6,7 @@ import com.baison.e3plus.common.message.Result;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Mapper;
 import com.github.pagehelper.Page;
+import java.util.List;
 
 /**
 * @ Author     ：${author}
@@ -22,7 +23,7 @@ public interface ${modelNameUpperCamel}Dao{
 
     int delete(@Param("id") Integer id);
 
-    ${modelNameUpperCamel} findById(@Param("id") Integer id);
+    List<${modelNameUpperCamel}> findById(@Param("id") Integer id);
 
     Page<${modelNameUpperCamel}> queryPage(${dtoNameUpperCamel} ${dtoNameLowerCamel});
 }
