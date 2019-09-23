@@ -80,11 +80,11 @@
         <#list baseDataList as data>
         <#if data.jdbcType?index_of("INTEGER")!=-1||data.jdbcType?index_of("BIGINT")!=-1||data.jdbcType?index_of("TIMESTAMP")!=-1>
             <if test="${data.columnName} != null">
-                and ${data.jdbcColumnName}= <#noparse>#{</#noparse>${data.columnName},jdbcType=${data.jdbcType}<#noparse>}</#noparse>
+                and ${data.jdbcColumnName} like CONCAT('%', <#noparse>#{</#noparse>${data.columnName},jdbcType=${data.jdbcType}<#noparse>}</#noparse>, '%')
             </if>
         <#else>
             <if test="${data.columnName} != null and ${data.columnName} != ''">
-                and ${data.jdbcColumnName}= <#noparse>#{</#noparse>${data.columnName},jdbcType=${data.jdbcType}<#noparse>}</#noparse>
+                and ${data.jdbcColumnName} like CONCAT('%', <#noparse>#{</#noparse>${data.columnName},jdbcType=${data.jdbcType}<#noparse>}</#noparse>, '%')
             </if>
         </#if>
         </#list>
