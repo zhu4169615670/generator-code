@@ -138,7 +138,7 @@ public class CodeGenerator {
 
     public static void main(String[] args) throws Exception {
         CodeGeneratorParamModel codeGeneratorParamModel = new CodeGeneratorParamModel();
-        codeGeneratorParamModel.setJdbcUrl("jdbc:mysql://baisondb001.mysql.database.chinacloudapi.cn:3306/e3plus-system-dev?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai");
+        codeGeneratorParamModel.setJdbcUrl("jdbc:mysql://baisondb001.mysql.database.chinacloudapi.cn:3306/e3plus-goods-dev?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai");
         codeGeneratorParamModel.setAuthor("pengfei.zhu");
         codeGeneratorParamModel.setJdbcPwd("fHzap123!@#");
         codeGeneratorParamModel.setJdbcUserName("baison@baisondb001");
@@ -149,7 +149,7 @@ public class CodeGenerator {
         codeGeneratorParamModel.setServiceAbsolutePath("/com/example/demo/service/");
         codeGeneratorParamModel.setServiceImplAbsolutePath("/com/example/demo/service/impl/");
         codeGeneratorParamModel.setDaoAbsolutePath("/com/example/demo/dao/");
-        codeGeneratorParamModel.setTableNames(new String[]{"sys_position"});
+        codeGeneratorParamModel.setTableNames(new String[]{"gds_classification_attribute"});
         CodeGenerator codeGenerator = new CodeGenerator();
         codeGenerator.genCode(codeGeneratorParamModel);
     }
