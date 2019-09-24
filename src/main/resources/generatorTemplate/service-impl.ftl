@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import java.util.Date;
+import com.baison.e3plus.common.core.util.LoginUtils;
 import com.baison.e3plus.common.message.Result;
 import com.baison.e3plus.common.message.ResultData;
 import com.baison.e3plus.common.message.ResultPageData;
@@ -42,11 +43,12 @@ public class ${modelNameUpperCamel}ServiceImpl implements ${modelNameUpperCamel}
 
     @Transactional
     @Override
-    public Result<ResultObject<#noparse><Object>>  create(${modelNameUpperCamel} ${modelNameLowerCamel}) {
+    public Result<ResultObject<#noparse><Object</#noparse>>>  create(${modelNameUpperCamel} ${modelNameLowerCamel}) {
         ${modelNameLowerCamel}.setCreateTime(new Date());
         ${modelNameLowerCamel}.setModifyTime(new Date());
+        ${modelNameLowerCamel}.setCreateBy(LoginUtils.getCruuentUser().userId);
         ${modelNameLowerCamel}Dao.create(${modelNameLowerCamel});
-        return Result.success("添加成功！");
+        return pageTool.getObject(${modelNameLowerCamel}.getId());
     }
 
     @Transactional
