@@ -23,7 +23,7 @@
         delete from ${tablename}
         where id = <#noparse>#{id,jdbcType=INTEGER</#noparse><#noparse>}</#noparse>
     </delete>
-    <insert id="create" parameterType="${basePackage}.model.${modelNameUpperCamel}">
+    <insert id="create" parameterType="${basePackage}.model.${modelNameUpperCamel}"  useGeneratedKeys="true" keyProperty="id" keyColumn="id">
         insert into ${tablename}
         <trim prefix="(" suffix=")" suffixOverrides=",">
         <#list baseDataList as data>
