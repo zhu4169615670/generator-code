@@ -36,8 +36,6 @@ public class ${modelNameUpperCamel}ServiceImpl implements ${modelNameUpperCamel}
 
     private static PageTool pageTool = PageTool.getPageToolImpl();
 
-    private static UuidUtil uuid = UuidUtil.getUuidUtilImpl();
-
     @Autowired
     private ${modelNameUpperCamel}Dao ${modelNameLowerCamel}Dao;
 
