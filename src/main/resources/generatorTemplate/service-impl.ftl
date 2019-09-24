@@ -42,7 +42,7 @@ public class ${modelNameUpperCamel}ServiceImpl implements ${modelNameUpperCamel}
 
     @Transactional
     @Override
-    public Result<?>  create(${modelNameUpperCamel} ${modelNameLowerCamel}) {
+    public Result<ResultObject<#noparse><Object>>  create(${modelNameUpperCamel} ${modelNameLowerCamel}) {
         ${modelNameLowerCamel}.setCreateTime(new Date());
         ${modelNameLowerCamel}.setModifyTime(new Date());
         ${modelNameLowerCamel}Dao.create(${modelNameLowerCamel});

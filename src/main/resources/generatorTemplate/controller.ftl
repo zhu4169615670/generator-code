@@ -44,7 +44,7 @@ public class ${modelNameUpperCamel}Controller {
     @ApiOperation(value = "保存接口入参", notes = "保存接口入参", httpMethod = "POST")
     @ResponseBody
     @PostMapping(value = "/create", produces = { MediaType.APPLICATION_JSON_UTF8_VALUE })
-    public Result<?> create(@RequestBody ${modelNameUpperCamel} ${modelNameLowerCamel}) {
+    public Result<ResultObject<#noparse><Object</#noparse>>>  create(@RequestBody ${modelNameUpperCamel} ${modelNameLowerCamel}) {
      return ${modelNameLowerCamel}Service.create(${modelNameLowerCamel});
     }
 
