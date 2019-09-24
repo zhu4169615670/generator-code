@@ -58,11 +58,11 @@
             <#list baseDataList as data>
         <#if data.jdbcType?index_of("INTEGER")!=-1||data.jdbcType?index_of("BIGINT")!=-1||data.jdbcType?index_of("TIMESTAMP")!=-1>
             <if test="${data.columnName} != null">
-                ${data.columnName} = <#noparse>#{</#noparse>${data.columnName},jdbcType=${data.jdbcType}<#noparse>}</#noparse>,
+                ${data.jdbcColumnName} = <#noparse>#{</#noparse>${data.columnName},jdbcType=${data.jdbcType}<#noparse>}</#noparse>,
             </if>
         <#else>
             <if test="${data.columnName} != null and ${data.columnName} != ''">
-                ${data.columnName} = <#noparse>#{</#noparse>${data.columnName},jdbcType=${data.jdbcType}<#noparse>}</#noparse>,
+                ${data.jdbcColumnName} = <#noparse>#{</#noparse>${data.columnName},jdbcType=${data.jdbcType}<#noparse>}</#noparse>,
             </if>
         </#if>
             </#list>
