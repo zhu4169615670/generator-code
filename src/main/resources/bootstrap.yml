@@ -1,0 +1,38 @@
+server:
+  #port: 5232
+  port: 5235
+
+spring:
+  application:
+    name: demo
+  cloud:
+#    config:
+#       label: master
+#       profile: dev
+#       uri: http://192.168.150.224:8888/
+    inetutils:
+      ignoredInterfaces:
+        - docker0
+        - lo
+        - eth0
+        - eth1
+        - veth.*
+      preferredNetworks:
+        - 192.168
+        - 10.0
+      useOnlySiteLocalInterfaces: true
+  profiles:
+    active: dev
+
+
+eureka:
+  instance:
+    instance-id: http://192.168.149.224:5232
+    hostname: 192.168.149.220
+    prefer-ip-address: true
+    ip-address: 192.168.149.220
+  client:
+    serviceUrl:
+      defaultZone: http://admin:123456@192.168.150.224:8761/eureka/
+
+
