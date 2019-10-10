@@ -72,7 +72,7 @@ public class ${modelNameUpperCamel}Controller {
     @ApiImplicitParam(value = "分页查询接口", dataTypeClass = ${modelNameUpperCamel}.class) })
     @ApiOperation(value = "分页查询接口入参", notes = "分页查询接口入参", httpMethod = "GET")
     @GetMapping(value = "/query", produces = { MediaType.APPLICATION_JSON_UTF8_VALUE })
-    public Result<ResultPageData<#noparse><List</#noparse><${modelNameUpperCamel}>>> queryPage(${dtoNameUpperCamel} ${dtoNameLowerCamel}, @RequestParam("pageNum") int pageNum,
+    public Result<ResultPageData<#noparse><List</#noparse><${modelNameUpperCamel}>>> query(${dtoNameUpperCamel} ${dtoNameLowerCamel}, @RequestParam("pageNum") int pageNum,
     @RequestParam("pageSize") int pageSize) {
          return ${modelNameLowerCamel}Service.query(${dtoNameLowerCamel}, pageNum, pageSize);
     }
