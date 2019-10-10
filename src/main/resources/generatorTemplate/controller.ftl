@@ -47,8 +47,8 @@ public class ${modelNameUpperCamel}Controller {
     }
 
     @ApiImplicitParam(value = "修改接口", dataTypeClass = ${modelNameUpperCamel}.class)
-    @ApiOperation(value = "修改接口入参", notes = "修改接口入参", httpMethod = "PUT")
-    @PutMapping(value = "/update")
+    @ApiOperation(value = "修改接口入参", notes = "修改接口入参", httpMethod = "POST")
+    @PostMapping(value = "/update")
     public Result<?> update(@RequestBody ${modelNameUpperCamel} ${modelNameLowerCamel}) {
         return ${modelNameLowerCamel}Service.update(${modelNameLowerCamel});
     }
