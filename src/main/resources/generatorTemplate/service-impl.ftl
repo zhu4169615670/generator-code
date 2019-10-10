@@ -55,6 +55,7 @@ public class ${modelNameUpperCamel}ServiceImpl implements ${modelNameUpperCamel}
     @Override
     public Result<?>  update(${modelNameUpperCamel} ${modelNameLowerCamel}) {
         ${modelNameLowerCamel}.setModifyTime(new Date());
+        ${modelNameLowerCamel}.setModifyBy(LoginUtils.getCruuentUser().userId);
         ${modelNameLowerCamel}Dao.update(${modelNameLowerCamel});
         return Result.success("修改成功！");
     }
