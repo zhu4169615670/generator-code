@@ -41,7 +41,6 @@ public class ${modelNameUpperCamel}Controller {
 
     @ApiImplicitParam(value = "保存接口", dataTypeClass = ${modelNameUpperCamel}.class)
     @ApiOperation(value = "保存接口入参", notes = "保存接口入参", httpMethod = "POST")
-    @ResponseBody
     @PostMapping(value = "/create", produces = { MediaType.APPLICATION_JSON_UTF8_VALUE })
     public Result<ResultObject<#noparse><Object</#noparse>>>  create(@RequestBody ${modelNameUpperCamel} ${modelNameLowerCamel}) {
      return ${modelNameLowerCamel}Service.create(${modelNameLowerCamel});
@@ -71,10 +70,10 @@ public class ${modelNameUpperCamel}Controller {
     @ApiImplicitParams({ @ApiImplicitParam(name = "pageNum", value = "当前页码", required = true, dataType = "int"),
     @ApiImplicitParam(name = "pageSize", value = "每页显示的条数", required = true, dataType = "int"),
     @ApiImplicitParam(value = "分页查询接口", dataTypeClass = ${modelNameUpperCamel}.class) })
-    @ApiOperation(value = "分页查询接口入参", notes = "分页查询接口入参", httpMethod = "POST")
-    @PostMapping(value = "/queryPage", produces = { MediaType.APPLICATION_JSON_UTF8_VALUE })
-    public Result<ResultPageData<#noparse><List</#noparse><${modelNameUpperCamel}>>> queryPage(@RequestBody ${dtoNameUpperCamel} ${dtoNameLowerCamel}, @RequestParam("pageNum") int pageNum,
+    @ApiOperation(value = "分页查询接口入参", notes = "分页查询接口入参", httpMethod = "GET")
+    @GetMapping(value = "/query", produces = { MediaType.APPLICATION_JSON_UTF8_VALUE })
+    public Result<ResultPageData<#noparse><List</#noparse><${modelNameUpperCamel}>>> queryPage(${dtoNameUpperCamel} ${dtoNameLowerCamel}, @RequestParam("pageNum") int pageNum,
     @RequestParam("pageSize") int pageSize) {
-         return ${modelNameLowerCamel}Service.queryPage(${dtoNameLowerCamel}, pageNum, pageSize);
+         return ${modelNameLowerCamel}Service.query(${dtoNameLowerCamel}, pageNum, pageSize);
     }
 }
