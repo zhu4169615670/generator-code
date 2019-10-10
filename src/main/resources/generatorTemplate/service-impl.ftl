@@ -68,14 +68,14 @@ public class ${modelNameUpperCamel}ServiceImpl implements ${modelNameUpperCamel}
     }
 
     @Override
-    public Result<ResultData<#noparse><List</#noparse><${modelNameUpperCamel}>>> findById(Integer id) {
-        return pageTool.findById(${modelNameLowerCamel}Dao.findById(id));
+    public Result<ResultData<#noparse><List</#noparse><${modelNameUpperCamel}>>> get(Integer id) {
+        return pageTool.findById(${modelNameLowerCamel}Dao.get(id));
     }
 
     @Override
-    public Result<ResultPageData<#noparse><List</#noparse><${modelNameUpperCamel}>>> queryPage(${dtoNameUpperCamel} ${dtoNameLowerCamel}, int pageNum, int pageSize) {
+    public Result<ResultPageData<#noparse><List</#noparse><${modelNameUpperCamel}>>> query(${dtoNameUpperCamel} ${dtoNameLowerCamel}, int pageNum, int pageSize) {
         PageHelper.startPage(pageNum, pageSize);
-        Page<${modelNameUpperCamel}> page = ${modelNameLowerCamel}Dao.queryPage(${dtoNameLowerCamel});
+        Page<${modelNameUpperCamel}> page = ${modelNameLowerCamel}Dao.query(${dtoNameLowerCamel});
         PageInfo<${modelNameUpperCamel}> pageInfo = new PageInfo<>(page);
         return pageTool.getPageInfo(pageInfo, pageSize, pageNum);
     }

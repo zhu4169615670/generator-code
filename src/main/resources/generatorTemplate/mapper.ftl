@@ -13,7 +13,7 @@
     <sql id="Base_Column_List">
         ${colunms}
     </sql>
-    <select id="findById" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <select id="get" parameterType="java.lang.Integer" resultMap="BaseResultMap">
         select
         <include refid="Base_Column_List"/>
         from ${tablename}
@@ -70,7 +70,7 @@
         where id = <#noparse>#{id,jdbcType=INTEGER</#noparse><#noparse>}</#noparse>
     </update>
 
-    <select id="queryPage" resultMap="BaseResultMap"
+    <select id="query" resultMap="BaseResultMap"
             parameterType="${basePackage}.dto.${modelNameUpperCamel}QueryDTO">
         select
         <include refid="Base_Column_List"/>
