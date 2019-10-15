@@ -86,4 +86,10 @@ public class ${modelNameUpperCamel}ServiceImpl implements ${modelNameUpperCamel}
         return pageTool.getPageInfo(pageInfo, pageSize, pageNum);
     }
 
+
+    @Override
+    public void updateBtach(List<Integer> ids, String status) {
+        ${modelNameLowerCamel}Dao.updateBtach(ids,status);
+    }
+
 }

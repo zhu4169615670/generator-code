@@ -23,4 +23,6 @@ public interface ${modelNameUpperCamel}Service{
     ${modelNameUpperCamel} get(Integer id);
 
     Result<ResultPageData<#noparse><List</#noparse><${modelNameUpperCamel}>>> query(${dtoNameUpperCamel} ${dtoNameLowerCamel}, int pageNum, int pageSize);
+
+    void updateBtach(List<Integer> ids, String enable);
 }

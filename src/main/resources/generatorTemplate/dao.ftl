@@ -28,4 +28,6 @@ public interface ${modelNameUpperCamel}Dao{
     Page<${modelNameUpperCamel}> query(${dtoNameUpperCamel} ${dtoNameLowerCamel});
 
     int findByCode(@Param("code")String code);
+
+    int updateBtach(@Param("ids") List<Integer> ids, @Param("status") String status);
 }

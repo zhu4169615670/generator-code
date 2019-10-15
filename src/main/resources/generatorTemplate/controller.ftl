@@ -23,6 +23,7 @@ import io.swagger.annotations.ApiOperation;
 import com.baison.e3plus.common.message.Result;
 import com.baison.e3plus.common.message.ResultData;
 import com.baison.e3plus.common.message.ResultPageData;
+import com.baison.e3plus.common.cncore.common.Status;
 
 
 /**
@@ -76,5 +77,21 @@ public class ${modelNameUpperCamel}Controller {
     public Result<ResultPageData<#noparse><List</#noparse><${modelNameUpperCamel}>>> query(${dtoNameUpperCamel} ${dtoNameLowerCamel}, @RequestParam("pageNum") int pageNum,
     @RequestParam("pageSize") int pageSize) {
          return ${modelNameLowerCamel}Service.query(${dtoNameLowerCamel}, pageNum, pageSize);
+    }
+
+    @ApiImplicitParam(value = "启用接口", dataType = "int", allowMultiple = true)
+    @ApiOperation(value = "启用接口", notes = "启用接口", httpMethod = "POST")
+    @PostMapping(value = "/enable")
+    public Result enable(@RequestParam("ids") List<Integer> ids) {
+        ${modelNameLowerCamel}Service.updateBtach(ids, Status.ENABLE);
+        return Result.success();
+    }
+
+    @ApiImplicitParam(value = "停用接口", dataType = "int", allowMultiple = true)
+    @ApiOperation(value = "启用接口", notes = "启用接口", httpMethod = "POST")
+    @PostMapping(value = "/disable")
+    public Result disable(@RequestParam("ids") List<Integer> ids) {
+            ${modelNameLowerCamel}Service.updateBtach(ids, Status.DISABLE);
+        return Result.success();
     }
 }

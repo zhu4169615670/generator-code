@@ -91,8 +91,16 @@
         </where>
     </select>
 
-
     <select id="findByCode" resultType="java.lang.Integer">
         select count(1) from ${tablename} where code = #{code}
     </select>
+
+    <update id="updateBtach">
+        update ${tablename} set status = #{status}
+        where in
+        <foreach item="item" index="index" collection="ids" open="("
+                 separator="," close=")">
+            #{item}
+        </foreach>
+    </update>
 </mapper>
