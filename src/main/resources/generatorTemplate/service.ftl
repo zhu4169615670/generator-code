@@ -16,9 +16,9 @@ public interface ${modelNameUpperCamel}Service{
 
     void create(${modelNameUpperCamel} ${modelNameLowerCamel});
 
-    Result<?> update(${modelNameUpperCamel} ${modelNameLowerCamel});
+    Result update(${modelNameUpperCamel} ${modelNameLowerCamel});
 
-    Result<?> delete(Integer id);
+    Result delete(Integer id);
 
     ${modelNameUpperCamel} get(Integer id);
 
