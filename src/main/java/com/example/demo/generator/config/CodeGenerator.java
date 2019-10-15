@@ -149,7 +149,7 @@ public class CodeGenerator {
         codeGeneratorParamModel.setServiceAbsolutePath("/com/example/demo/service/");
         codeGeneratorParamModel.setServiceImplAbsolutePath("/com/example/demo/service/impl/");
         codeGeneratorParamModel.setDaoAbsolutePath("/com/example/demo/dao/");
-        codeGeneratorParamModel.setTableNames(new String[]{"currency_type_operate_log"});
+        codeGeneratorParamModel.setTableNames(new String[]{"area"});
         CodeGenerator codeGenerator = new CodeGenerator();
         codeGenerator.genCode(codeGeneratorParamModel);
 
@@ -378,8 +378,11 @@ public class CodeGenerator {
     public static void genController(String tableName, String modelName) {
         try {
             freemarker.template.Configuration cfg = getConfiguration();
-            String[] split = tableName.split("_");
-            String tableLastName = split[1];
+            String tableLastName = tableName;
+            if(tableName.contains("_")){
+                String[] split = tableName.split("_");
+                 tableLastName = split[1];
+            }
             String modelLastName = firstToCapital(tableLastName);
             Map<String, Object> data = new HashMap<>();
             data.put("date", DATE);
