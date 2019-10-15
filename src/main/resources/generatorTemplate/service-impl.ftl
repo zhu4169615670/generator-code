@@ -18,7 +18,6 @@ import com.baison.e3plus.common.message.ResultData;
 import com.baison.e3plus.common.message.ResultPageData;
 import java.util.List;
 import com.github.pagehelper.Page;
-import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.baison.e3plus.common.tool.PageTool;
 import com.baison.e3plus.common.tool.UuidUtil;
