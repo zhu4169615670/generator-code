@@ -138,7 +138,7 @@ public class CodeGenerator {
 
     public static void main(String[] args) throws Exception {
         CodeGeneratorParamModel codeGeneratorParamModel = new CodeGeneratorParamModel();
-        codeGeneratorParamModel.setJdbcUrl("jdbc:mysql://baisondb001.mysql.database.chinacloudapi.cn:3306/e3plus-goods-dev?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai");
+        codeGeneratorParamModel.setJdbcUrl("jdbc:mysql://baisondb001.mysql.database.chinacloudapi.cn:3306/e3plus-support-dev?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai");
         codeGeneratorParamModel.setAuthor("pengfei.zhu");
         codeGeneratorParamModel.setJdbcPwd("fHzap123!@#");
         codeGeneratorParamModel.setJdbcUserName("baison@baisondb001");
@@ -149,9 +149,10 @@ public class CodeGenerator {
         codeGeneratorParamModel.setServiceAbsolutePath("/com/example/demo/service/");
         codeGeneratorParamModel.setServiceImplAbsolutePath("/com/example/demo/service/impl/");
         codeGeneratorParamModel.setDaoAbsolutePath("/com/example/demo/dao/");
-        codeGeneratorParamModel.setTableNames(new String[]{"gds_classification_attribute"});
+        codeGeneratorParamModel.setTableNames(new String[]{"code_rule_extend"});
         CodeGenerator codeGenerator = new CodeGenerator();
         codeGenerator.genCode(codeGeneratorParamModel);
+
     }
     /**
      * 通过数据表名称生成代码，Model 名称通过解析数据表名称获得，下划线转大驼峰的形式。
