@@ -26,4 +26,6 @@ public interface ${modelNameUpperCamel}Dao{
     ${modelNameUpperCamel} get(@Param("id") Integer id);
 
     Page<${modelNameUpperCamel}> query(${dtoNameUpperCamel} ${dtoNameLowerCamel});
+
+    int findByCode(@Param("code")String code);
 }

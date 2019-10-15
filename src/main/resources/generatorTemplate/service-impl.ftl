@@ -45,6 +45,7 @@ public class ${modelNameUpperCamel}ServiceImpl implements ${modelNameUpperCamel}
     @Transactional(rollbackFor = Exception.class)
     @Override
     public void  create(${modelNameUpperCamel} ${modelNameLowerCamel}) {
+        Assert.isTrue(verificationCode(${modelNameLowerCamel}.getCode()), "code已存在！");
         ${modelNameLowerCamel}.setCreateTime(new Date());
         ${modelNameLowerCamel}.setModifyTime(new Date());
         ${modelNameLowerCamel}.setCreateBy(Constant.ADMIN);
@@ -66,6 +67,10 @@ public class ${modelNameUpperCamel}ServiceImpl implements ${modelNameUpperCamel}
     public Result delete(Integer id) {
         ${modelNameLowerCamel}Dao.delete(id);
         return Result.success();
+    }
+
+    private boolean verificationCode(String code) {
+        return ${modelNameLowerCamel}Dao.findByCode(code) > 0 ? false : true;
     }
 
     @Override

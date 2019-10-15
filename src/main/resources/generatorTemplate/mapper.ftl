@@ -90,4 +90,9 @@
         </#list>
         </where>
     </select>
+
+
+    <select id="findByCode" resultType="java.lang.Integer">
+        select count(1) from ${tablename} where code = #{code}
+    </select>
 </mapper>
