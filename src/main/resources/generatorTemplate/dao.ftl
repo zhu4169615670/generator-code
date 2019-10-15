@@ -23,7 +23,7 @@ public interface ${modelNameUpperCamel}Dao{
 
     int delete(@Param("id") Integer id);
 
-    List<${modelNameUpperCamel}> get(@Param("id") Integer id);
+    ${modelNameUpperCamel} get(@Param("id") Integer id);
 
     Page<${modelNameUpperCamel}> query(${dtoNameUpperCamel} ${dtoNameLowerCamel});
 }
