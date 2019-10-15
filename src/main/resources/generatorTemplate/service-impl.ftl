@@ -56,7 +56,7 @@ public class ${modelNameUpperCamel}ServiceImpl implements ${modelNameUpperCamel}
         ${modelNameLowerCamel}.setModifyTime(new Date());
         ${modelNameLowerCamel}.setModifyBy("admin");
         ${modelNameLowerCamel}Dao.update(${modelNameLowerCamel});
-        return Result.success("修改成功！");
+        return Result.success();
     }
 
 
@@ -64,7 +64,7 @@ public class ${modelNameUpperCamel}ServiceImpl implements ${modelNameUpperCamel}
     @Override
     public Result<?>  delete(Integer id) {
         ${modelNameLowerCamel}Dao.delete(id);
-        return Result.success("删除成功！");
+        return Result.success();
     }
 
     @Override
