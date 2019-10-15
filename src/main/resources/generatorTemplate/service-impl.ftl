@@ -68,8 +68,8 @@ public class ${modelNameUpperCamel}ServiceImpl implements ${modelNameUpperCamel}
     }
 
     @Override
-    public Result<ResultData<#noparse><List</#noparse><${modelNameUpperCamel}>>> get(Integer id) {
-        return pageTool.findById(${modelNameLowerCamel}Dao.get(id));
+    public ${modelNameUpperCamel} get(Integer id) {
+        return ${modelNameLowerCamel}Dao.get(id);
     }
 
     @Override

@@ -20,7 +20,7 @@ public interface ${modelNameUpperCamel}Service{
 
     Result<?> delete(Integer id);
 
-    Result<ResultData<#noparse><List</#noparse><${modelNameUpperCamel}>>> get(Integer id);
+    ${modelNameUpperCamel} get(Integer id);
 
     Result<ResultPageData<#noparse><List</#noparse><${modelNameUpperCamel}>>> query(${dtoNameUpperCamel} ${dtoNameLowerCamel}, int pageNum, int pageSize);
 }
