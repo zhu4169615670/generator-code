@@ -23,6 +23,7 @@ import com.baison.e3plus.common.tool.PageTool;
 import com.baison.e3plus.common.tool.UuidUtil;
 import cn.hutool.json.JSONUtil;
 import static com.github.pagehelper.page.PageMethod.startPage;
+import com.baison.e3plus.biz.support.api.util.Constant;
 
 
 
@@ -46,7 +47,7 @@ public class ${modelNameUpperCamel}ServiceImpl implements ${modelNameUpperCamel}
     public void  create(${modelNameUpperCamel} ${modelNameLowerCamel}) {
         ${modelNameLowerCamel}.setCreateTime(new Date());
         ${modelNameLowerCamel}.setModifyTime(new Date());
-        ${modelNameLowerCamel}.setCreateBy("admin");
+        ${modelNameLowerCamel}.setCreateBy(Constant.ADMIN);
         ${modelNameLowerCamel}Dao.create(${modelNameLowerCamel});
     }
 
@@ -54,7 +55,7 @@ public class ${modelNameUpperCamel}ServiceImpl implements ${modelNameUpperCamel}
     @Override
     public Result  update(${modelNameUpperCamel} ${modelNameLowerCamel}) {
         ${modelNameLowerCamel}.setModifyTime(new Date());
-        ${modelNameLowerCamel}.setModifyBy("admin");
+        ${modelNameLowerCamel}.setModifyBy(Constant.ADMIN);
         ${modelNameLowerCamel}Dao.update(${modelNameLowerCamel});
         return Result.success();
     }
