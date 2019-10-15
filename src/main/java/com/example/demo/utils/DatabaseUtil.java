@@ -233,6 +233,7 @@ public class DatabaseUtil {
                 default:
                     columnType = "未知类型";
                     System.out.print("存在不支持类型！请手写。");
+                    System.out.println("类型为:"+columnTypes.get(i));
                     throw new RuntimeException("存在不支持类型！请手写。");
 
             }

@@ -14,7 +14,7 @@ import com.baison.e3plus.common.message.ResultPageData;
 */
 public interface ${modelNameUpperCamel}Service{
 
-    Result<ResultObject<#noparse><Object</#noparse>>> create(${modelNameUpperCamel} ${modelNameLowerCamel});
+    void create(${modelNameUpperCamel} ${modelNameLowerCamel});
 
     Result<?> update(${modelNameUpperCamel} ${modelNameLowerCamel});
 

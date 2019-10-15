@@ -42,8 +42,9 @@ public class ${modelNameUpperCamel}Controller {
     @ApiImplicitParam(value = "保存接口", dataTypeClass = ${modelNameUpperCamel}.class)
     @ApiOperation(value = "保存接口入参", notes = "保存接口入参", httpMethod = "POST")
     @PostMapping(value = "/create", produces = { MediaType.APPLICATION_JSON_UTF8_VALUE })
-    public Result<ResultObject<#noparse><Object</#noparse>>>  create(@RequestBody ${modelNameUpperCamel} ${modelNameLowerCamel}) {
-     return ${modelNameLowerCamel}Service.create(${modelNameLowerCamel});
+    public Result<?>  create(@RequestBody ${modelNameUpperCamel} ${modelNameLowerCamel}) {
+       ${modelNameLowerCamel}Service.create(${modelNameLowerCamel});
+       return Result.success(${modelNameLowerCamel}.getId());
     }
 
     @ApiImplicitParam(value = "修改接口", dataTypeClass = ${modelNameUpperCamel}.class)

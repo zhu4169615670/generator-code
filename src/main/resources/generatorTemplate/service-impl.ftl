@@ -41,27 +41,26 @@ public class ${modelNameUpperCamel}ServiceImpl implements ${modelNameUpperCamel}
     private ${modelNameUpperCamel}Dao ${modelNameLowerCamel}Dao;
 
 
-    @Transactional
+    @Transactional(rollbackFor = Exception.class)
     @Override
-    public Result<ResultObject<#noparse><Object</#noparse>>>  create(${modelNameUpperCamel} ${modelNameLowerCamel}) {
+    public void  create(${modelNameUpperCamel} ${modelNameLowerCamel}) {
         ${modelNameLowerCamel}.setCreateTime(new Date());
         ${modelNameLowerCamel}.setModifyTime(new Date());
-        ${modelNameLowerCamel}.setCreateBy(LoginUtils.getCruuentUser().userId);
+        ${modelNameLowerCamel}.setCreateBy("admin");
         ${modelNameLowerCamel}Dao.create(${modelNameLowerCamel});
-        return pageTool.getObject(${modelNameLowerCamel}.getId());
     }
 
-    @Transactional
+    @Transactional(rollbackFor = Exception.class)
     @Override
     public Result<?>  update(${modelNameUpperCamel} ${modelNameLowerCamel}) {
         ${modelNameLowerCamel}.setModifyTime(new Date());
-        ${modelNameLowerCamel}.setModifyBy(LoginUtils.getCruuentUser().userId);
+        ${modelNameLowerCamel}.setModifyBy("admin");
         ${modelNameLowerCamel}Dao.update(${modelNameLowerCamel});
         return Result.success("修改成功！");
     }
 
 
-    @Transactional
+    @Transactional(rollbackFor = Exception.class)
     @Override
     public Result<?>  delete(Integer id) {
         ${modelNameLowerCamel}Dao.delete(id);
