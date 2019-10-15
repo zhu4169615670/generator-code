@@ -52,7 +52,7 @@ public class ${modelNameUpperCamel}ServiceImpl implements ${modelNameUpperCamel}
 
     @Transactional(rollbackFor = Exception.class)
     @Override
-    public Result<?>  update(${modelNameUpperCamel} ${modelNameLowerCamel}) {
+    public Result  update(${modelNameUpperCamel} ${modelNameLowerCamel}) {
         ${modelNameLowerCamel}.setModifyTime(new Date());
         ${modelNameLowerCamel}.setModifyBy("admin");
         ${modelNameLowerCamel}Dao.update(${modelNameLowerCamel});
@@ -62,7 +62,7 @@ public class ${modelNameUpperCamel}ServiceImpl implements ${modelNameUpperCamel}
 
     @Transactional(rollbackFor = Exception.class)
     @Override
-    public Result<?>  delete(Integer id) {
+    public Result delete(Integer id) {
         ${modelNameLowerCamel}Dao.delete(id);
         return Result.success();
     }
