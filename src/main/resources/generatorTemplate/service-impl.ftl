@@ -23,6 +23,7 @@ import com.github.pagehelper.PageInfo;
 import com.baison.e3plus.common.tool.PageTool;
 import com.baison.e3plus.common.tool.UuidUtil;
 import cn.hutool.json.JSONUtil;
+import static com.github.pagehelper.page.PageMethod.startPage;
 
 
 
@@ -74,7 +75,7 @@ public class ${modelNameUpperCamel}ServiceImpl implements ${modelNameUpperCamel}
 
     @Override
     public Result<ResultPageData<#noparse><List</#noparse><${modelNameUpperCamel}>>> query(${dtoNameUpperCamel} ${dtoNameLowerCamel}, int pageNum, int pageSize) {
-        PageHelper.startPage(pageNum, pageSize);
+        startPage(pageNum, pageSize);
         Page<${modelNameUpperCamel}> page = ${modelNameLowerCamel}Dao.query(${dtoNameLowerCamel});
         PageInfo<${modelNameUpperCamel}> pageInfo = new PageInfo<>(page);
         return pageTool.getPageInfo(pageInfo, pageSize, pageNum);
