@@ -24,6 +24,7 @@ import com.baison.e3plus.common.message.Result;
 import com.baison.e3plus.common.message.ResultData;
 import com.baison.e3plus.common.message.ResultPageData;
 import com.baison.e3plus.common.cncore.common.Status;
+import com.github.pagehelper.PageInfo;
 
 
 /**
@@ -74,9 +75,9 @@ public class ${modelNameUpperCamel}Controller {
     @ApiImplicitParam(value = "分页查询接口", dataTypeClass = ${modelNameUpperCamel}.class) })
     @ApiOperation(value = "分页查询接口入参", notes = "分页查询接口入参", httpMethod = "GET")
     @GetMapping(value = "/query")
-    public Result<ResultPageData<#noparse><List</#noparse><${modelNameUpperCamel}>>> query(${dtoNameUpperCamel} ${dtoNameLowerCamel}, @RequestParam("pageNum") int pageNum,
+    public Result<PageInfo<#noparse><</#noparse>${modelNameUpperCamel}>> query(${dtoNameUpperCamel} ${dtoNameLowerCamel}, @RequestParam("pageNum") int pageNum,
     @RequestParam("pageSize") int pageSize) {
-         return ${modelNameLowerCamel}Service.query(${dtoNameLowerCamel}, pageNum, pageSize);
+         return Result.success(${modelNameLowerCamel}Service.query(${dtoNameLowerCamel},pageNum, pageSize))
     }
 
     @ApiImplicitParam(value = "启用接口", dataType = "int", allowMultiple = true)

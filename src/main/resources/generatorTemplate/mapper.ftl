@@ -92,15 +92,15 @@
     </select>
 
     <select id="findByCode" resultType="java.lang.Integer">
-        select count(1) from ${tablename} where code = #{code}
+        select count(1) from ${tablename} where code =<#noparse>#{</#noparse>code<#noparse>}</#noparse>
     </select>
 
     <update id="updateBtach">
-        update ${tablename} set status = #{status}
+        update ${tablename} set status = <#noparse>#{</#noparse>status<#noparse>}</#noparse>
         where in
         <foreach item="item" index="index" collection="ids" open="("
                  separator="," close=")">
-            #{item}
+            <#noparse>#{</#noparse>item<#noparse>}</#noparse>
         </foreach>
     </update>
 </mapper>

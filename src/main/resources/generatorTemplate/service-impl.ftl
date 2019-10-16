@@ -79,11 +79,9 @@ public class ${modelNameUpperCamel}ServiceImpl implements ${modelNameUpperCamel}
     }
 
     @Override
-    public Result<ResultPageData<#noparse><List</#noparse><${modelNameUpperCamel}>>> query(${dtoNameUpperCamel} ${dtoNameLowerCamel}, int pageNum, int pageSize) {
+    public PageInfo<#noparse><</#noparse>${modelNameUpperCamel}<#noparse>></#noparse> query(${dtoNameUpperCamel} ${dtoNameLowerCamel}, int pageNum, int pageSize) {
         startPage(pageNum, pageSize);
-        Page<${modelNameUpperCamel}> page = ${modelNameLowerCamel}Dao.query(${dtoNameLowerCamel});
-        PageInfo<${modelNameUpperCamel}> pageInfo = new PageInfo<>(page);
-        return pageTool.getPageInfo(pageInfo, pageSize, pageNum);
+        return new PageInfo<>(${modelNameLowerCamel}Dao.query(${dtoNameLowerCamel}));
     }
 
 

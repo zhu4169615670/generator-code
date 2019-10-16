@@ -5,6 +5,7 @@ import ${basePackage}.dto.${dtoNameUpperCamel};
 import com.baison.e3plus.common.message.Result;
 import com.baison.e3plus.common.message.ResultData;
 import com.baison.e3plus.common.message.ResultPageData;
+import com.github.pagehelper.PageInfo;
 
 /**
 * @ Author     ：${author}
@@ -22,7 +23,7 @@ public interface ${modelNameUpperCamel}Service{
 
     ${modelNameUpperCamel} get(Integer id);
 
-    Result<ResultPageData<#noparse><List</#noparse><${modelNameUpperCamel}>>> query(${dtoNameUpperCamel} ${dtoNameLowerCamel}, int pageNum, int pageSize);
+    PageInfo<#noparse><</#noparse>${modelNameUpperCamel}<#noparse>></#noparse> query(${dtoNameUpperCamel} ${dtoNameLowerCamel}, int pageNum, int pageSize);
 
     void updateBtach(List<Integer> ids, String enable);
 }
