@@ -8,10 +8,10 @@ import com.baison.e3plus.common.message.ResultPageData;
 import com.github.pagehelper.PageInfo;
 
 /**
-* @ Author     ：${author}
-* @ Date       ：Created in ${date}
-* @ Description：
-* @ Modified By：
+* @Author:${author}
+* @Date:Created in ${date}
+* @Description:
+* @Modified By:
 */
 public interface ${modelNameUpperCamel}Service{
 

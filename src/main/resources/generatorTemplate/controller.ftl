@@ -28,10 +28,10 @@ import com.github.pagehelper.PageInfo;
 
 
 /**
-* @ Author     ：${author}
-* @ Date       ：Created in ${date}
-* @ Description：
-* @ Modified By：
+* @Author:${author}
+* @Date:Created in ${date}
+* @Description:
+* @Modified By:
 */
 @Api(tags = "${modelNameUpperCamel}管理")
 @RestController

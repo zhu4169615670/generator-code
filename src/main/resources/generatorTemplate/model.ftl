@@ -10,10 +10,10 @@ import java.util.Date;
 import java.io.Serializable;
 
 /**
-* @ Author     ：${author}
-* @ Date       ：Created in ${date}
-* @ Description：
-* @ Modified By：
+* @Author:${author}
+* @Date:Created in ${date}
+* @Description:
+* @Modified By:
 */
 @ApiModel(value = "${tableName}表的字段描述")
 @Data
