@@ -74,8 +74,8 @@ public class ${modelNameUpperCamel}ServiceImpl implements ${modelNameUpperCamel}
     }
 
     @Override
-    public ${modelNameUpperCamel} get(Integer id) {
-        return ${modelNameLowerCamel}Dao.get(id);
+    public ${modelNameUpperCamel} get(Integer id,String code) {
+        return ${modelNameLowerCamel}Dao.get(id,code);
     }
 
     @Override

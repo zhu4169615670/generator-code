@@ -21,7 +21,7 @@ public interface ${modelNameUpperCamel}Service{
 
     Result delete(Integer id);
 
-    ${modelNameUpperCamel} get(Integer id);
+    ${modelNameUpperCamel} get(Integer id,String code);
 
     PageInfo<#noparse><</#noparse>${modelNameUpperCamel}<#noparse>></#noparse> query(${dtoNameUpperCamel} ${dtoNameLowerCamel}, int pageNum, int pageSize);
 

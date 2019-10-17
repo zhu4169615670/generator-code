@@ -17,7 +17,13 @@
         select
         <include refid="Base_Column_List"/>
         from ${tablename}
-        where id = <#noparse>#{id,jdbcType=INTEGER</#noparse><#noparse>}</#noparse>
+        where 1=1
+        <if test="id != null">
+            and id = <#noparse>#{</#noparse>id,<#noparse>}</#noparse>
+        </if>
+        <if test="code != null and code !=''">
+            and code = <#noparse>#{</#noparse>code,<#noparse>}</#noparse>
+        </if>
     </select>
     <delete id="delete" parameterType="java.lang.Integer">
         delete from ${tablename}

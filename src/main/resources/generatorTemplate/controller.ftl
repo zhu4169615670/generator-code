@@ -66,8 +66,8 @@ public class ${modelNameUpperCamel}Controller {
     @ApiImplicitParam(name = "id", value = "主键ID", dataType = "int")
     @ApiOperation(value = "根据主键ID查询接口入参", notes = "根据主键ID查询接口入参", httpMethod = "GET")
     @GetMapping(value = "/get")
-    public Result<${modelNameUpperCamel}> get(@RequestParam("id") Integer id) {
-        return Result.success(${modelNameLowerCamel}Service.get(id));
+    public Result<${modelNameUpperCamel}> get(@RequestParam(value = "id",required = false) Integer id,@RequestParam(value = "code",required = false) String code) {
+        return Result.success(${modelNameLowerCamel}Service.get(id,code));
     }
 
     @ApiImplicitParams({ @ApiImplicitParam(name = "pageNum", value = "当前页码", required = true, dataType = "int"),
