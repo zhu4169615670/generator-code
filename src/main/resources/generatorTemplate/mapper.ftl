@@ -97,7 +97,7 @@
 
     <update id="updateBtach">
         update ${tablename} set status = <#noparse>#{</#noparse>status<#noparse>}</#noparse>
-        where in
+        where id in
         <foreach item="item" index="index" collection="ids" open="("
                  separator="," close=")">
             <#noparse>#{</#noparse>item<#noparse>}</#noparse>
