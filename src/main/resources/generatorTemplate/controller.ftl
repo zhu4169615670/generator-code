@@ -77,7 +77,7 @@ public class ${modelNameUpperCamel}Controller {
     @GetMapping(value = "/query")
     public Result<PageInfo<#noparse><</#noparse>${modelNameUpperCamel}>> query(${dtoNameUpperCamel} ${dtoNameLowerCamel}, @RequestParam("pageNum") int pageNum,
     @RequestParam("pageSize") int pageSize) {
-         return Result.success(${modelNameLowerCamel}Service.query(${dtoNameLowerCamel},pageNum, pageSize))
+         return Result.success(${modelNameLowerCamel}Service.query(${dtoNameLowerCamel},pageNum, pageSize));
     }
 
     @ApiImplicitParam(value = "启用接口", dataType = "int", allowMultiple = true)
