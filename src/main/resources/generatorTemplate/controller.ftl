@@ -92,7 +92,7 @@ public class ${modelNameUpperCamel}Controller {
     @ApiOperation(value = "启用接口", notes = "启用接口", httpMethod = "POST")
     @PostMapping(value = "/disable")
     public Result disable(@RequestParam("ids") List<Integer> ids) {
-            ${modelNameLowerCamel}Service.updateBatch(ids, Status.DISABLE);
+        ${modelNameLowerCamel}Service.updateBatch(ids, Status.DISABLE);
         return Result.success();
     }
 }
