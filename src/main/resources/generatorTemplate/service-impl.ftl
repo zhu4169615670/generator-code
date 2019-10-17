@@ -86,8 +86,8 @@ public class ${modelNameUpperCamel}ServiceImpl implements ${modelNameUpperCamel}
 
 
     @Override
-    public void updateBtach(List<Integer> ids, String status) {
-        ${modelNameLowerCamel}Dao.updateBtach(ids,status);
+    public void updateBatch(List<Integer> ids, String status) {
+        ${modelNameLowerCamel}Dao.updateBatch(ids,status);
     }
 
 }

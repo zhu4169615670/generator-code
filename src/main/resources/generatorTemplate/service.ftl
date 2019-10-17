@@ -25,5 +25,5 @@ public interface ${modelNameUpperCamel}Service{
 
     PageInfo<#noparse><</#noparse>${modelNameUpperCamel}<#noparse>></#noparse> query(${dtoNameUpperCamel} ${dtoNameLowerCamel}, int pageNum, int pageSize);
 
-    void updateBtach(List<Integer> ids, String enable);
+    void updateBatch(List<Integer> ids, String enable);
 }

@@ -101,7 +101,7 @@
         select count(1) from ${tablename} where code =<#noparse>#{</#noparse>code<#noparse>}</#noparse>
     </select>
 
-    <update id="updateBtach">
+    <update id="updateBatch">
         update ${tablename} set status = <#noparse>#{</#noparse>status<#noparse>}</#noparse>
         where id in
         <foreach item="item" index="index" collection="ids" open="("

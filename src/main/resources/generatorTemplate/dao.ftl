@@ -28,5 +28,5 @@ public interface ${modelNameUpperCamel}Dao{
 
     int findByCode(@Param("code")String code);
 
-    int updateBtach(@Param("ids") List<Integer> ids, @Param("status") String status);
+    int updateBatch(@Param("ids") List<Integer> ids, @Param("status") String status);
 }
