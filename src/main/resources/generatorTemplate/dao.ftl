@@ -13,7 +13,7 @@ import java.util.List;
 * @Date:Created in ${date}
 * @Description:
 * @Modified By:
-*/r
+*/
 public interface ${modelNameUpperCamel}Dao{
 
     int create(${modelNameUpperCamel} ${modelNameLowerCamel});
