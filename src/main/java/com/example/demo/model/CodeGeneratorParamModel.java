@@ -1,6 +1,11 @@
 package com.example.demo.model;
 
+import com.example.demo.generator.config.CodeGenerator;
 import lombok.Data;
+import org.apache.catalina.User;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @ Author     ：pengfei.zhu
@@ -56,5 +61,12 @@ public class CodeGeneratorParamModel {
     private String[] tableNames;
 
     private boolean isGeneratorDTO = true;
+
+
+    public static void main(String[] args) {
+        List<CodeGenerator> shareGroupLockLogs = new ArrayList<>();
+        shareGroupLockLogs.add(new CodeGenerator());
+        System.out.println(shareGroupLockLogs.get(0).getClass().getSimpleName());
+    }
 
 }

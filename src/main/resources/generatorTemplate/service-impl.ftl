@@ -28,10 +28,10 @@ import com.baison.e3plus.biz.support.api.util.Constant;
 
 
 /**
-* @Author:${author}
-* @Date:Created in ${date}
-* @Description:
-* @Modified By:
+* @author ${author}
+* @Date  ${date}
+* @Description
+* @Modified By
 */
 @Service
 public class ${modelNameUpperCamel}ServiceImpl implements ${modelNameUpperCamel}Service {

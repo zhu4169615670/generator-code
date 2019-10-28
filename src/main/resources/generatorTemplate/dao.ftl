@@ -9,10 +9,10 @@ import com.github.pagehelper.Page;
 import java.util.List;
 
 /**
-* @Author:${author}
-* @Date:Created in ${date}
-* @Description:
-* @Modified By:
+* @author ${author}
+* @Date ${date}
+* @Description
+* @Modified By
 */
 public interface ${modelNameUpperCamel}Dao{
 
