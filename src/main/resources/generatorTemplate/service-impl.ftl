@@ -24,6 +24,7 @@ import com.baison.e3plus.common.tool.UuidUtil;
 import cn.hutool.json.JSONUtil;
 import static com.github.pagehelper.page.PageMethod.startPage;
 import com.baison.e3plus.biz.support.api.util.Constant;
+import com.baison.e3plus.biz.support.api.common.Status;
 
 
 
@@ -46,6 +47,7 @@ public class ${modelNameUpperCamel}ServiceImpl implements ${modelNameUpperCamel}
     @Override
     public void  create(${modelNameUpperCamel} ${modelNameLowerCamel}) {
         Assert.isTrue(verificationCode(${modelNameLowerCamel}.getCode()), "code已存在！");
+        ${modelNameLowerCamel}.setStatus(Status.INITIAL);
         ${modelNameLowerCamel}.setCreateTime(new Date());
         ${modelNameLowerCamel}.setModifyTime(new Date());
         ${modelNameLowerCamel}.setCreateBy(Constant.ADMIN);
